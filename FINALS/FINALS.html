@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="finals.css">
+  <title>KNOTS</title>
+  <script src="WebFinals.js"></script>
+</head>
+
+<body>
+  <header>
+    <div id="cart">
+      <button class="btn1" onclick="displayCart()"><img src="cart.png" width="50" height="50" /></button>
+    </div>
+    <div class="header-content">
+      <img height="90" width="90" src="snkrs.png">
+    </div>
+    <h1 class="sale-message">Sale is on! 25% off sitewide using SNKRS25 at checkout</h1>
+  </header>
+
+  <div id="banner">
+    <img src="header.jpg" alt="Banner Image">
+  </div>
+
+
+  <main>
+    <div class="product black">
+      <img src="blackpn.png" width="226" height="370" alt="cream">
+      <h3>Nike Air Force 1 Low x Ambush</h3>
+      <p>Colour: Black</p>
+      <p>₱10,295.00</p>
+      <button class="btn" onclick="addToCart('BLACK', 10295)">Add to Cart</button>
+    </div>
+
+    <div class="product white">
+      <img src="whitepn.png" width="226" height="370" alt="black">
+      <h3>Nike Air Force 1 Low x Ambush</h3>
+      <p>Colour: Phantom</p>
+      <p>₱10,295.00</p>
+      <button class="btn4" onclick="addToCart('WHITE', 10295)">Add to Cart</button>
+    </div>
+
+    <div class="product blue">
+      <img src="bluepn.png" width="226" height="370" alt="MATCHA">
+      <h3>Nike Air Force 1 Low x Ambush</h3>
+      <p>Colour: Game Royal</p>
+      <p>₱10,295.00</p>
+      <button class="btn" onclick="addToCart('BLUE', 10295)">Add to Cart</button>
+    </div>
+
+    <div class="product green">
+      <img src="greenpn.png" width="226" height="370" alt="MATCHA">
+      <h3>Nike Air Force 1 Low x Ambush</h3>
+      <p>Colour: Pine Green</p>
+      <p>₱10,295.00</p>
+      <button class="btn" onclick="addToCart('GREEN', 10295)">Add to Cart</button>
+    </div>
+  </main>
+
+  <button class="btn3" onclick="checkout()">CHECKOUT</button>
+
+  <script>
+    var cartItems = [];
+    var totalPrice = 0;
+
+    function addToCart(product, price) {
+      cartItems.push(product);
+      totalPrice += price;
+      alert(product + " is added to your basket!");
+    }
+
+    function displayCart() {
+      var cartElement = document.getElementById("cart");
+      cartElement.innerHTML = "";
+      for (var i = 0; i < cartItems.length; i++) {
+        var item = cartItems[i];
+        var itemElement = document.createElement("p");
+        itemElement.textContent = item;
+        cartElement.appendChild(itemElement);
+      }
+    }
+
+    function checkout() {
+      alert("Thank You for Choosing Us! \nTotal Cost: " + "₱" + totalPrice);
+    }
+
+
+    function displayCart() {
+      alert("The items you choose in your basket are: " + cartItems.join(", "));
+    }
+
+  </script>
+
+
+  <footer>
+    <p> <b>
+        <center>
+          <p class="copyright">SNKRS &#169; 2023</p>
+        </center>
+      </b></p>
+  </footer>
+</body>
+
+</html>
